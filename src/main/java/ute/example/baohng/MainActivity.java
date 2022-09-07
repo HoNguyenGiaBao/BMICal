@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        edtNum1 = (EditText) findViewById(R.id.editTextNumber);
-        edtNum2 = (EditText) findViewById(R.id.editTextNumber2);
+        edtNum1 = (EditText) findViewById(R.id.editTextNumber2); //cân nặng
+        edtNum2 = (EditText) findViewById(R.id.editTextNumber); //chiều cao
         btnCalc = (Button) findViewById(R.id.button);
         result = (TextView) findViewById(R.id.textView5);
 
@@ -33,9 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 String string1 = edtNum1.getText().toString().trim();
                 String string2 = edtNum2.getText().toString().trim();
 
-                int
+                double weight = Double.parseDouble(string1);
+                double height = Double.parseDouble(string2);
 
-                result = (edtNum2)/(edtNum1*2);
+                double ketqua = ((weight)/(height * 2))*100;
+                result.setText(ketqua + "");
             }
         });
     }
